@@ -1,0 +1,20 @@
+lockVersion: 2.0.0
+id: 53a3830d-dc4f-403d-a572-8f2584cb4966
+management:
+  docChecksum: 2116d84d2b9ee4035e4961f058081236
+  docVersion: 1.0.0
+  speakeasyVersion: 1.284.0
+  generationVersion: 2.326.3
+  releaseVersion: 0.0.2
+  configChecksum: 1b99d22b5752fdf1498141e633d01caf
+features:
+  postman:
+    acceptHeaders: 0.1.0
+    callbacks: 0.0.0
+    core: 0.1.0
+    globalSecurity: 0.1.0
+    globalServerURLs: 0.1.0
+    inputOutputModels: 0.0.0
+    webhooks: 0.0.0
+generatedFiles:
+  - speakeasy_bar_postman_collection.json

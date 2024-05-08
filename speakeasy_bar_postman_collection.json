@@ -1,0 +1,438 @@
+{
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "key",
+                "value": "Authorization",
+                "type": "string"
+            },
+            {
+                "key": "value",
+                "value": "{{apikey}}",
+                "type": "string"
+            }
+        ]
+    },
+    "info": {
+        "name": "speakeasy-bar",
+        "description": "A secret underground bar that serves drinks to those in the know.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "authentication",
+            "item": [
+                {
+                    "name": "Authenticate with the API by providing a username and password.",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/authenticate",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "authenticate"
+                            ]
+                        },
+                        "description": ""
+                    }
+                }
+            ],
+            "description": "The authentication endpoints."
+        },
+        {
+            "name": "drinks",
+            "item": [
+                {
+                    "name": "Get a list of drinks.",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks"
+                            ],
+                            "query": [
+                                {
+                                    "key": "type",
+                                    "value": "wine",
+                                    "type": "enum"
+                                }
+                            ]
+                        },
+                        "description": "Get a list of drinks, if authenticated this will include stock levels and product codes otherwise it will only include public information."
+                    }
+                },
+                {
+                    "name": "Get a drink.",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "NAC-3F2D1",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Get a drink by product code. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Update a drink.",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json,application/xml",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "APM-1F2D3",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Update a drink. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Update a drink.",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "text/*",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json,application/xml",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "APM-1F2D3",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Update a drink. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Update a drink.",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "text/csv",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json,application/xml",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "NAC-3F2D1",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Update a drink. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Update a drink.",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json,application/xml",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "APM-1F2D3",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Update a drink. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Delete a drink.",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/{productCode}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                ":productCode"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "productCode",
+                                    "value": "NAC-3F2D1",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Delete a drink. Only available when authenticated."
+                    }
+                },
+                {
+                    "name": "Search for drinks.",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/drinks/search",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "drinks",
+                                "search"
+                            ],
+                            "query": [
+                                {
+                                    "key": "query",
+                                    "value": "<value>",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "other",
+                                    "type": "enum"
+                                }
+                            ]
+                        },
+                        "description": "Search for drinks, if authenticated this will include stock levels and product codes otherwise it will only include public information."
+                    }
+                }
+            ],
+            "description": "The drinks endpoints."
+        },
+        {
+            "name": "orders",
+            "item": [
+                {
+                    "name": "Create an order.",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json,application/xml",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "\"<value>\""
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/order",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "order"
+                            ],
+                            "query": [
+                                {
+                                    "key": "callback_url",
+                                    "value": "<value>",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "description": "Create an order for a drink."
+                    }
+                }
+            ],
+            "description": "The orders endpoints."
+        },
+        {
+            "name": "configuration",
+            "item": [
+                {
+                    "name": "Subscribe to webhooks.",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[\n  {\n    \"url\": \"<value>\",\n    \"webhook\": \"stockUpdate\"\n  }\n]"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/webhooks/subscribe",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "webhooks",
+                                "subscribe"
+                            ]
+                        },
+                        "description": "Subscribe to webhooks."
+                    }
+                }
+            ],
+            "description": "The configuration endpoints."
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://speakeasy.bar"
+        }
+    ]
+}

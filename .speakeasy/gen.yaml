@@ -1,0 +1,26 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: speakeasy-bar
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+postman:
+  version: 0.0.2
+  imports:
+    option: openapi
+    paths:
+      callbacks: callbacks
+      errors: errors
+      operations: operations
+      shared: shared
+      webhooks: webhooks
+  inputModelSuffix: input
+  outputModelSuffix: output
+  packageName: speakeasy-bar
